@@ -99,6 +99,7 @@ class pets(Animal): # every pet is an animal, but not all animals are pet
 
     #overwriting a function in super(parrent) class
 
+    # Method overriding
     def getinstring(self):
         # return super().getinstring()
         return "{} is {}cm tall and {}kg and say {} and his owner is {}".format(self._Animal__name, 
@@ -107,8 +108,30 @@ class pets(Animal): # every pet is an animal, but not all animals are pet
                                                             self._Animal__sound,
                                                             self.__owner) # either use mangling or get functions
          
-     
+    # METHOD OVERLOADING (MULTIPLE ARGUMENTS FOR SAME METHOD OR MULTIPLE METHODS WITH DIFFERENT ARGUMENTS IN THE SAME CLASS)
+
+    # def sum_num(self, *args):
+    #     num = 0
+    #     if num in args:
+    #         result += num
+    #     return result
+
 
 obj2 = pets("neko", 21, 9, 'meoww', 'mahi')
 Pet_animal = obj2.getinstring()
 print(Pet_animal)
+
+#method overloading ex
+# obj2.sum_num(1,2,3,4) #it can take different arguments
+# obj2.sum_num(1,2)
+
+# polymorphism (methods behave diff. when passed with diff. arguments (attributes))
+
+class animal_type:
+    def get_type(self, animal): # => animal is a class
+        animal.get_type()
+
+test1 = animal_type()
+
+test1.get_type(cat)
+test1.get_type(obj2)
