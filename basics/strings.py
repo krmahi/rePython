@@ -24,3 +24,8 @@ print(long_string.split())
 # using c variable notations
 
 print("%c is my %s letter and my number %d is %.2f decimal away" % ('A', 'favorite', 10, 1.4))
+
+# more
+
+x = 'bug' * 8
+print(x) 

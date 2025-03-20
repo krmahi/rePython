@@ -46,3 +46,9 @@ while (i <= 20):
         i+=1
         continue
     i+=1
+
+# enumerate
+
+y = [1,2,3,4,5]
+for i in enumerate(y): # to print indexes
+    print(i)
