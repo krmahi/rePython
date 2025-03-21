@@ -47,3 +47,4 @@ print(wrapper__stack) # [7, 8 ,9]
 print(wrapper__stack.peek(), end = " ")
 print(wrapper__stack.peek())
 print(wrapper__stack) # [7, 8 ,9]
+print(type(wrapper__stack)) # stack
