@@ -7,7 +7,7 @@
 
 # accessing relations
 # i => heap indices (indexing can start from 1)
-# parent (i) -> i / 2
+# parent (i) -> i // 2
 # left (i) -> i * 2 (left child of i)
 # right (i) -> i * 2 + 1 (right child of i)
 
