@@ -5,3 +5,7 @@ class vertex:
 
     def add_neighbor(self, v):
         self.neighbors.add(v)
+
+class vertex_matrix:
+    def __init__(self, n):
+        self.name = n
