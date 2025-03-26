@@ -72,5 +72,8 @@ print(my_heap.peek())
 print(my_heap.pop())
 print(my_heap)
 print(type(my_heap))
+print(my_heap.pop())
+print(my_heap.pop())
+
 
     
