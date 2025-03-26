@@ -38,7 +38,6 @@ my_graph = graph()
 # print(my_graph.add_vertex(vertex_matrix('B')))
 # my_graph.add_edges('A', 'B')
 # my_graph.print_graph()
-
 for i in range(ord('A'), ord('K')):
     my_graph.add_vertex(vertex_matrix(chr(i)))
 my_graph.print_graph()
@@ -49,3 +48,4 @@ edges = ['AB', 'AH', 'AD', 'BG', 'DK']
 for edge in edges:
     my_graph.add_edges(edge[0], edge[1])
 my_graph.print_graph()
+
