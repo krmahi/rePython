@@ -24,8 +24,8 @@ class solution_2:
             self.quicksort(arr, partition + 1, h)
 
     def get_partition(self, arr, l, h):
-        pivot, i, j = arr[l], l, h
-        while i < j:
+        pivot, i, j = arr[l], l, h   # * worst case -> sorted array, or same element and pivot as 0 or nth element 
+        while i < j:                 # * to counter either select random or middle element as pivot 
             while arr[i] <= pivot and i < h: i += 1
             while arr[j] > pivot and j > l: j -= 1
             if i < j: arr[i], arr[j] = arr[j], arr[i]
