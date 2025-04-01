@@ -11,7 +11,7 @@ class solution:
         index = 0
         for value in range(minval, maxval + 1):
             while count[value] > 0:
-                count[value] -= 1
+                count[value] -= 1 # * until 0 then ,move to next 
                 nums[index] = value
                 index += 1
 
