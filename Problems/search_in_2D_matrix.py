@@ -15,3 +15,9 @@ class solution:
                 res = BinarySearch(i, 0, m)
                 if res: return True
         return False
+    
+
+# !different approach
+#* r_index = mid // m
+#* c_index = mid % m
+#* compare with matrix[r_index][c_index]
