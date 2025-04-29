@@ -2,6 +2,7 @@ from collections import Counter
 from collections import deque
 import heapq
 
+# _heapify_max
 class Solution:
     def leastInterval(self, tasks: list[str], n: int) -> int:
         count = Counter(tasks) # map of counts {task : occ}
@@ -22,7 +23,8 @@ class Solution:
                 heapq.heappush(maxHeap, tmp)
                 heapq._heapify_max(maxHeap)
         return t
-    
+
+# heapify 
 class solution_2:
     def leastInterval(self, tasks: list[str], n: int) -> int:
         count = Counter(tasks) # map of counts {task : occ}
@@ -39,6 +41,20 @@ class solution_2:
             if q and q[0][1] <= t:
                 heapq.heappush(maxHeap, q.popleft()[0])
         return t
+
+# math logic
+class solution_2:
+    def leastInterval(self, tasks: list[str], n: int) -> int:
+        count = Counter(tasks) # dictionary
+        maxf = max(count.values())
+        # The line `maxCount = sum(1 for i in count.values() if i == maxf)` is calculating the number
+        # of tasks that have the maximum frequency (`maxf`) in the input list of tasks.
+        maxCount = sum(1 for i in count.values() if i == maxf)
+        # or
+        # maxCount_1 = 0
+        # for i in count.values():
+        #     maxCount_1 += 1 if i == maxf else 0
+        return max(len(tasks), (maxf - 1)*(n + 1) + maxCount)
 
 my_sol = solution_2()
 print(my_sol.leastInterval(["A","C","A","B","D","B"], 1))
