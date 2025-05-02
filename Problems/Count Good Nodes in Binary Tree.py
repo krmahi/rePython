@@ -14,6 +14,7 @@ def GoodNode(self, root: TreeNode):
     good = 0
 
     def dfs(node, max_val):
+        nonlocal good
         if node.val >= max_val:
             max_val = node.val
             good += 1
