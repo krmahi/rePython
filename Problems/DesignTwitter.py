@@ -1,3 +1,4 @@
+import heapq
 from collections import defaultdict
 
 #sorting: time -> O(n * m + tlogt) + O(1) space -> O(N * m + N * m) => N = userId, M = followeeID, m = tweets 
@@ -26,3 +27,30 @@ class Twitter:
 
     def Unfollow(self, followerId, followeeId):
         self.followMap[followerId].discard(followeeId) # discard dosent throw any error if item not in set 
+
+#heap instead of normal sorting
+class Twitter:
+    def __init__(self):
+        self.time = 0
+        self.tweetMap = defaultdict(list)
+        self.followMap = defaultdict(set)
+
+    def postTweet(self, UserId, TweetId):
+        self.tweetMap[UserId].append([self.time, TweetId])
+        self.time += 1
+
+    def getFeed(self, UserId):
+        feed = self.tweetMap[UserId][:]
+
+        for followeeId in self.followMap[UserId]:
+            feed.extend(self.tweetMap[followeeId])
+        
+        return [tweetId for _, tweetId in heapq.nlargest(10, feed, key=lambda x: x[0])]
+    
+    def follow(self, followerId, followeeId):
+        if followerId != followeeId:
+            self.followMap[followerId].add(followeeId)
+
+    def Unfollow(self, followerId, followeeId):
+        self.followMap[followerId].discard(followeeId) # discard dosent throw any error if item not in set 
+
